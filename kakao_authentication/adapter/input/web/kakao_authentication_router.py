@@ -72,7 +72,7 @@ async def kakao_redirect(code: str):
         value=session_id,
         httponly=True,
         secure=False,
-        samesite="lax",
+        samesite="none",
         max_age=6 * 60 * 60
     )
 
