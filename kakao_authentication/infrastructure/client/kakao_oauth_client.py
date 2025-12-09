@@ -1,4 +1,5 @@
 import requests
+import os
 
 from kakao_authentication.domain.kakao_user import KakaoUser
 from kakao_authentication.domain.port.kakao_oauth_port import KakaoOAuthPort
@@ -23,6 +24,7 @@ class KakaoOAuthClient(KakaoOAuthPort):
             "client_id": KAKAO_CLIENT_ID,
             "redirect_uri": KAKAO_REDIRECT_URI,
             "code": auth_code,
+            "client_secret": os.getenv("KAKAO_CLIENT_SECRET")
         }
 
         response = requests.post(
