@@ -24,7 +24,6 @@ class KakaoOAuthClient(KakaoOAuthPort):
             "client_id": KAKAO_CLIENT_ID,
             "redirect_uri": KAKAO_REDIRECT_URI,
             "code": auth_code,
-            "client_secret": os.getenv("KAKAO_CLIENT_SECRET")
         }
 
         response = requests.post(
